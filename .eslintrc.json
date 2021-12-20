@@ -18,7 +18,13 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": ["react", "@typescript-eslint", "prettier", "react-hooks"],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "prettier",
+    "react-hooks",
+    "import"
+  ],
   "rules": {
     "react-hooks/exhaustive-deps": "warn",
     "react/require-default-props": 0,
@@ -34,6 +40,7 @@
         "endOfLine": "auto"
       }
     ],
+    "import/no-unresolved": "error",
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -44,5 +51,13 @@
         "tsx": "never"
       }
     ]
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {}
+    }
   }
 }
